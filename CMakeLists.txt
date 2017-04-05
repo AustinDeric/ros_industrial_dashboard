@@ -22,6 +22,6 @@ install(DIRECTORY resource
 
 install(
   PROGRAMS
-    scripts/packml
+    scripts/dashboard
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )

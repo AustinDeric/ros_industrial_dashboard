@@ -1,5 +1,5 @@
 """
-   Copyright 2017 Shaun Edwards
+   Copyright 2017 Austin Deric
 
    Licensed under the Apache License, Version 2.0 (the "License");
    you may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ from threading import Thread
 from qt_gui.plugin import Plugin
 from python_qt_binding import loadUi
 from python_qt_binding.QtCore import Qt, QThread
-from python_qt_binding.QtGui import QWidget, QPalette
+from python_qt_binding.QtWidgets import QWidget
+from python_qt_binding.QtGui import QPalette
 from std_srvs.srv import Trigger
 from packml_msgs.srv import Transition
 from packml_msgs.srv import TransitionRequest
@@ -57,3 +58,9 @@ class Dashboard(Plugin):
             self._widget.setWindowTitle(self._widget.windowTitle() + (' (%d)' % context.serial_number()))
 
         context.add_widget(self._widget)
+
+    @staticmethod
+    def add_arguments(parser):
+        rospy.loginfo("Add arguments callback")
+        group = parser.add_argument_group('Options for PackML plugin')
+        group.add_argument('--arg1', action='store_true', help='arg1 help')

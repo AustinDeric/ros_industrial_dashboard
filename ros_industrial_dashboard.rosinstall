@@ -1,1 +1,1 @@
-- git: {local-name: packml, uri: 'https://github.com/AustinDeric/packml.git', version: indigo-devel}
+- git: {local-name: packml, uri: 'https://github.com/ros-industrial-consortium/packml.git', version: kinetic-devel}
